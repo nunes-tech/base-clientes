@@ -1,0 +1,57 @@
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+<div class="cardUser">
+    <div>
+        <h3> <%= userSelecionado.name %> </h3>
+        <h3> <%= userSelecionado.idade %> anos </h4>
+    </div>
+</div>
+
+<div class="enderecos">
+    <% if(userSelecionado.Addresses.length > 0) { %>
+        <h3>Endereços registrados:</h3>
+        <% } else { %>
+            <h3>Nenhum endereço registrado!</h3>
+            <% } %>
+    <% userSelecionado.Addresses.forEach( endereco => { %>
+        <ul>
+            <li class="endereco">
+                <%= endereco.rua    %>,
+                <%= endereco.numero %> -
+                <%= endereco.bairro %> -
+                <%= endereco.cidade %>
+                <form class="inline" action="/endereco/excluir/<%= endereco.id %>" method="post">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <input type="submit" value="❌">
+                </form>
+            </li>
+        </ul>
+
+    <% } ) %>
+
+</div>
+
+<div>
+    <h3 class="add_endereco">Adicionar novo endereço:</h3>
+    <form action="/endereco/<%= userSelecionado.id %>" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="form1">
+            <label for="rua">Rua:</label>
+            <input type="text" name="rua" required>
+
+            <label for="bairro">Bairro:</label>
+            <input type="text" name="bairro" required>
+
+            <label for="cidade">Cidade:</label>
+            <input type="text" name="cidade" required>
+
+            <label for="numero">Número:</label>
+            <input type="text" name="numero" required>
+            <input class="btn" type="submit" value="adicionar endereço">
+        </div>
+    </form>
+</div>
+
+
+<%- include("partials/footer") %>
