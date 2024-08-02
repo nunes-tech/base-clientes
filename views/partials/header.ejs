@@ -4,14 +4,15 @@
             <nav id="menu">
                 <ul>
                     <li class="li_topo">
-                        <a href="/"><img src="../assets/icons/home.svg" width="20px" height="20px"><span>Home</span></a>
+                        <!-- <a href="/"><img src="../assets/icons/home.svg" width="20px" height="20px"><span>Home</span></a> -->
+                        <a href="/"><%- include("../icons/home") %><span>Home</span></a>
                     </li>
                     <li class="li_topo">
-                        <a href="/cadastrar"><img src="../assets/icons/add.svg" width="20px" height="20px"><span>Cadastrar</span></a>
+                        <a href="/cadastrar"><%- include("../icons/add") %><span>Cadastrar</span></a>
                     </li>
                     <li class="li_topo icon_mode">
-                        <img class="toggle-visibily" src="../assets/icons/moon.svg" width="20px" height="20px">
-                        <img class="toggle-visibily" hidden src="../assets/icons/sun.svg" width="20px" height="20px">
+                        <%- include("../icons/moon") %>
+                        <%- include("../icons/sun") %>
                     </li>
                 </ul>
             </nav>

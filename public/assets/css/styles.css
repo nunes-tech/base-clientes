@@ -145,3 +145,62 @@ h3, h4 {
  .li_topo.icon_mode {
     cursor: pointer;
  }
+
+
+
+ /* Dark Mode Styles */
+body.night {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.night .container {
+    background-color: #1e1e1e;
+}
+
+body.night .menu {
+    background-color: #1a1a1a;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 10px 0;
+}
+
+body.night #menu .li_topo a span {
+    color: white;
+}
+
+body.night h1, body.night h2, body.night h3, body.night h4 {
+    color: #e0e0e0;
+}
+
+/* Card Styles */
+body.night .cardUser {
+    background-color: #232323;
+    border: 1px solid #444;
+}
+
+body.night .btn {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+body.night .btn:hover {
+    background-color: #444;
+    border-color: #666;
+}
+
+svg.icon {
+    width: 20px;
+    height: 20px;
+    fill: black;
+    stroke: black;
+}
+
+body.night .icon {
+    fill: white;
+    stroke: white;
+}
+
+.hidden {
+    display: none;
+}
