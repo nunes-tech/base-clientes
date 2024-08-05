@@ -1,0 +1,18 @@
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+
+  <h1>Cadastrar Usuario:</h1>
+  <form class="myform" action="/cadastrar" method="POST">
+    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+    <label for="name">Digite seu nome:</label>
+    <input type="text" name="name" required placeholder="seu nome aqui...">
+
+    <label for="idade">Digite sua  idade:</label>
+    <input type="number" name="idade" required placeholder="sua idade aqui...">
+
+    <input class="btn" type="submit" value="cadastrar">
+  </form>
+
+
+<%- include("partials/footer") %>

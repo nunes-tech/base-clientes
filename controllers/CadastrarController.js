@@ -1,4 +1,3 @@
-const { name } = require("ejs")
 const User = require("../models/User")
 
 exports.CadastrarController = (req, res) => {

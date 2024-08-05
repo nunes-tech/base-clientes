@@ -1,0 +1,30 @@
+<%- include("partials/head") %>
+<%- include("partials/header") %>
+
+
+  <h1>Bem vindo ao nosso site</h1>
+  <h2>Lista de usuarios cadastrados:</h2>
+  <% if( data && data.length > 0 ) { %>
+    <% data.forEach( user => {  %>
+    <div class="cardUser">
+      <div>
+        <h3> <%= user.name %> </h3>
+        <h3> <%= user.idade %> anos </h4>
+      </div>
+      <div>
+        <a class="btn" href="/endereco/<%=user.id%>"><span>[Ver endereço]</span></a>
+        <form action="/delete/<%=user.id%>" method="POST">
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <input class="btn" type="submit" value="[Excluir]">
+        </form>
+        <a class="btn" href="/atualizar/<%=user.id%>"><span>[Editar]</span></a>
+        
+      </div>
+    </div>
+  <% } ) %>
+<% } else { %>
+  <h3>Nenhum usuario cadastrado!</h3>
+  <% } %>
+
+
+<%- include("partials/footer") %>
